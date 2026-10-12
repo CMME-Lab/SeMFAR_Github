@@ -1,0 +1,44 @@
+{
+  "variant": "affine",
+  "baseline": "ver7 Scale_Gradient_Lambda02",
+  "frozen": [
+    "Beta2 ROI upstream SR",
+    "Ver11-A residual predictor",
+    "EchoCare encoder"
+  ],
+  "loss": "SmoothL1 scale supervision + 0.2 Gradient-Charbonnier",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "epochs": 100000,
+  "seed": 123,
+  "ridge": {
+    "variant": "A",
+    "ridge_rule": "validation positive residual-energy q10",
+    "ridge_lambda": 7.313708465517266e-06,
+    "energy_q01_q05_q10_q25_q50_q75_q95_q99": [
+      2.6134791824006243e-06,
+      4.7729395191709045e-06,
+      7.313708465517266e-06,
+      1.4981176718720235e-05,
+      6.16092438576743e-05,
+      8.74190081958659e-05,
+      0.00011809996067313477,
+      0.0001330364029854536
+    ],
+    "target_q01_q05_q25_q50_q75_q95_q99": [
+      -14.15582275390625,
+      -8.172805786132812,
+      -2.1085426807403564,
+      0.0940103679895401,
+      3.423140525817871,
+      9.499417304992676,
+      14.247482299804688
+    ],
+    "scale_bounds": [
+      0.0,
+      3.0
+    ],
+    "weighted_loss": false,
+    "epochs": 100000
+  }
+}

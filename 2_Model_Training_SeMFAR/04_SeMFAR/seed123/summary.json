@@ -1,0 +1,23 @@
+{
+  "model": "affine",
+  "best_epoch": 138,
+  "methods": [
+    {
+      "method": "affine",
+      "n": 10,
+      "psnr_mean": 23.14289722442627,
+      "psnr_std": 0.4447300001730487,
+      "ssim_mean": 0.5085070997476577,
+      "ssim_std": 0.029278193363382905,
+      "roi_psnr_mean": 26.854059600830077,
+      "roi_psnr_std": 1.2606612516419513,
+      "roi_ssim_mean": 0.8034076869487763,
+      "roi_ssim_std": 0.03700723725020531,
+      "dice_mean": 0.8621945282723147,
+      "dice_std": 0.03242191057837444,
+      "scale_mean": 1.1595342040061951,
+      "scale_roi": 0.0,
+      "scale_nonroi": 0.0
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+﻿Final dataset root: D:\Woojeong_SR\data10
+Paired used by training: D:\Woojeong_SR\data10\Paired_ver10
+Unpaired used by training: D:\Woojeong_SR\data10\Unpaired_ver10
+Execution scripts: C:\Users\CMME260629\Desktop\woojeong_output
+Post-processing source: D:\SuperResolutionAI_3
+Difference plotter: D:\SuperResolutionAI\tools\plot_pixelwise_difference_hr_png_tumor.py

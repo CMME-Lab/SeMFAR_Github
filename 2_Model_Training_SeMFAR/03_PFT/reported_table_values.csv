@@ -1,0 +1,2 @@
+model,roi_psnr_mean,roi_psnr_sd,roi_ssim_mean,roi_ssim_sd,roi_dice_mean,roi_dice_sd,boundary_f1_mean,boundary_f1_sd,hd95_px_mean,hd95_px_sd
+PFT,22.9292,3.1262,0.6367,0.1216,0.9106,0.0253,0.1834,0.1038,8.8379,1.7961

@@ -1,0 +1,21 @@
+{
+  "char": 0.05392499640583992,
+  "ssim": 0.47069430351257324,
+  "grad_raw": 0.018178380094468594,
+  "grad_term": 0.0036356760654598476,
+  "sup": 0.057560672983527184,
+  "psnr": 22.431737899780273,
+  "best_epoch": 172,
+  "test_files": [
+    "scan_benign_6372",
+    "scan_benign_6363",
+    "scan_benign_6275",
+    "scan_benign_5579",
+    "scan_benign_5023",
+    "scan_benign_7547",
+    "scan_benign_6373",
+    "scan_benign_5367",
+    "scan_benign_6449",
+    "scan_benign_6254"
+  ]
+}

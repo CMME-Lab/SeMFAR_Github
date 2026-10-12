@@ -1,0 +1,32 @@
+{
+  "created": "2026-10-02T17:41:41",
+  "seed": 42,
+  "paired_cases": 50,
+  "paired_path": "D:\\Woojeong_SR\\data10\\Paired_ver10",
+  "unpaired_path": "D:\\Woojeong_SR\\data10\\Unpaired_ver10",
+  "fixed_split": "D:\\Woojeong_SR\\Comparison_300epochs_Data_ver10_50paired_1018unpaired_2\\EMA_without_uncertainty\\split.json",
+  "split_sizes": {
+    "train": 30,
+    "validation": 10,
+    "test": 10
+  },
+  "batch_size": 16,
+  "fully_supervised_updates_per_epoch": 2,
+  "ema_updates_per_epoch": 2,
+  "early_stopping": {
+    "patience": 50,
+    "min_delta": 0.0001
+  },
+  "checkpoint_selection": "strict minimum raw validation loss",
+  "roi_protocol": "ver2: direct float32, no erosion, complete HR ROI, independent Chan-Vese masks, boundary tolerance 1 px",
+  "sources": {
+    "fully_supervised": {
+      "reference": "D:\\Woojeong_SR\\Comparison_300epochs_Data_ver10_50paired_1018unpaired_2\\Supervised_EDSR_Gradient_Lambda02_Adam_LR1e3_ConvergedP50D1e4BestVal_Seed123\\train_supervised_edsr_gradient02_adam_lr1e3.py",
+      "sha256": "9225093206c9b33ef70865cd2d902cb49208bfafdfc139a7c960578fb2e64184"
+    },
+    "ema": {
+      "reference": "D:\\Woojeong_SR\\Comparison_300epochs_Data_ver10_50paired_1018unpaired_2\\EMA_rrad02_re_epoch_AdamW_LR1e3_ConvergedP50D1e4BestVal_Seed123\\train_ema_rrad02_adamw_lr1e3.py",
+      "sha256": "c68bd73658f7e1780eba1155eba637c78e048ac6c4ebfcf759aa37b24f336e0a"
+    }
+  }
+}

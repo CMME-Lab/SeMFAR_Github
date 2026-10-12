@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+wandb/
+.env
+*.tmp
+last.pt
+
+# Raw BUSI data and generated data-generation outputs stay local.
+Dataset_BUSI_with_GT/
+1_Data_Generation/local_data/
+1_Data_Generation/local_outputs/
+
+# Prepared training images and new model runs stay outside Git.
+2_Model_Training_SeMFAR/prepared_data/
+2_Model_Training_SeMFAR/new_runs/

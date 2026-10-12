@@ -1,0 +1,9 @@
+{
+  "patience": 50,
+  "min_delta": 0.0001,
+  "checkpoint_rule": "strict raw validation minimum",
+  "early_stopping_rule": "patience reference requires min_delta improvement",
+  "hard_epoch_cap": null,
+  "implementation_guard": 100000,
+  "seed": 42
+}

@@ -1,0 +1,111 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{Region-specific image-quality comparison for different numbers of paired LR--HR cases while keeping the LR-only set fixed at 988 images. Three independent training seeds (42, 123, and 456) were evaluated on the same ten test images using the ROI ver2 protocol: direct float32 inference without mask erosion, an HR-localized search window, and independent morphological Chan--Vese boundary refinement for the HR reference and prediction. For each seed, each metric was first averaged over the ten test images; entries report the mean $\pm$ sample standard deviation of these seed-level means across the three seeds ($n=3$). Best epoch is reported as median [minimum--maximum] across seeds. The selected checkpoint had the lowest validation loss, and training stopped when validation loss failed to improve by at least $10^{-4}$ for 50 consecutive epochs.}
+\label{tab:paired-case-comparison}
+
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.15}
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcccccc}
+\toprule
+Paired cases
+& Model
+& ROI PSNR (dB) $\uparrow$
+& ROI SSIM $\uparrow$
+& ROI Dice $\uparrow$
+& Boundary F1 $\uparrow$
+& HD95 (px) $\downarrow$
+& Best epoch \\
+\midrule
+
+\multirow{3}{*}{50 LR--HR}
+& Fully Supervised
+& $27.0715 \pm 0.7057$
+& $0.8272 \pm 0.0175$
+& $0.9542 \pm 0.0043$
+& $0.3440 \pm 0.0496$
+& $6.0573 \pm 0.0502$
+& 557 [404--589] \\
+
+
+& EMA (2 updates/epoch)
+& $25.4336 \pm 1.3546$
+& $0.7868 \pm 0.0285$
+& $0.9409 \pm 0.0091$
+& $0.2489 \pm 0.0549$
+& $6.9498 \pm 0.6900$
+& 403 [172--569] \\
+
+
+& SeMFAR
+& $\mathbf{29.5547 \pm 0.0374}$
+& $\mathbf{0.8697 \pm 0.0014}$
+& $\mathbf{0.9637 \pm 0.0008}$
+& $\mathbf{0.4565 \pm 0.0112}$
+& $\mathbf{5.4946 \pm 0.1853}$
+& 162 [138--173] \\
+
+\midrule
+
+\multirow{3}{*}{75 LR--HR}
+& Fully Supervised
+& $26.0956 \pm 1.4716$
+& $0.8108 \pm 0.0332$
+& $0.9477 \pm 0.0100$
+& $0.2957 \pm 0.0843$
+& $6.3715 \pm 0.5967$
+& 359 [324--580] \\
+
+
+& EMA (2 updates/epoch)
+& $24.6400 \pm 0.7205$
+& $0.7721 \pm 0.0194$
+& $0.9355 \pm 0.0046$
+& $0.2255 \pm 0.0206$
+& $7.1428 \pm 0.3322$
+& 286 [263--380] \\
+
+
+& SeMFAR
+& $\mathbf{29.4125 \pm 0.0755}$
+& $\mathbf{0.8712 \pm 0.0006}$
+& $\mathbf{0.9637 \pm 0.0006}$
+& $\mathbf{0.4612 \pm 0.0056}$
+& $\mathbf{5.4246 \pm 0.0917}$
+& 145 [121--182] \\
+
+\midrule
+
+\multirow{3}{*}{100 LR--HR}
+& Fully Supervised
+& $26.3558 \pm 0.8706$
+& $0.8093 \pm 0.0136$
+& $0.9500 \pm 0.0062$
+& $0.3032 \pm 0.0476$
+& $6.2315 \pm 0.4183$
+& 460 [421--582] \\
+
+
+& EMA (2 updates/epoch)
+& $25.3126 \pm 1.0793$
+& $0.7835 \pm 0.0293$
+& $0.9410 \pm 0.0091$
+& $0.2548 \pm 0.0458$
+& $6.9257 \pm 0.6153$
+& 324 [229--647] \\
+
+
+& SeMFAR
+& $\mathbf{29.4376 \pm 0.0753}$
+& $\mathbf{0.8723 \pm 0.0017}$
+& $\mathbf{0.9644 \pm 0.0003}$
+& $\mathbf{0.4619 \pm 0.0021}$
+& $\mathbf{5.3160 \pm 0.0705}$
+& 133 [119--205] \\
+
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
