@@ -16,6 +16,32 @@ The following example shows the HR/LR image comparison and the signed/absolute p
 
 ![High-fidelity minus Low-fidelity pixel-wise comparison](assets/scan_benign_6431_High_fidelity_minus_Low_fidelity_pixelwise.png)
 
+## 50-pair evaluation: image quality and efficiency
+
+We evaluated reconstruction quality using 50 paired low-fidelity (LR)--high-fidelity (HR) cases while retaining a fixed set of 988 LR-only images for the semi-supervised setting. Three independent training seeds (42, 123, and 456) were evaluated on the same ten test images. For each seed, metrics were averaged over the ten test images; the entries below report the mean and sample standard deviation across these seed-level means ($n=3$). Higher is better for ROI PSNR, ROI SSIM, ROI Dice, and Boundary F1; lower is better for HD95.
+
+| Model | ROI PSNR (dB) $\uparrow$ | ROI SSIM $\uparrow$ | ROI Dice $\uparrow$ | Boundary F1 $\uparrow$ | HD95 (px) $\downarrow$ |
+|---|---:|---:|---:|---:|---:|
+| Fully Supervised | 27.0715 $\pm$ 0.7057 | 0.8272 $\pm$ 0.0175 | 0.9542 $\pm$ 0.0043 | 0.3440 $\pm$ 0.0496 | 6.0573 $\pm$ 0.0502 |
+| EMA | 25.4336 $\pm$ 1.3546 | 0.7868 $\pm$ 0.0285 | 0.9409 $\pm$ 0.0091 | 0.2489 $\pm$ 0.0549 | 6.9498 $\pm$ 0.6900 |
+| PFT [85] | 22.9292 $\pm$ 3.1262 | 0.6367 $\pm$ 0.1216 | 0.9160 $\pm$ 0.0253 | 0.1834 $\pm$ 0.1038 | 8.8379 $\pm$ 1.7961 |
+| **SeMFAR** | **29.5547 $\pm$ 0.0374** | **0.8697 $\pm$ 0.0014** | **0.9637 $\pm$ 0.0008** | **0.4565 $\pm$ 0.0112** | **5.4946 $\pm$ 0.1853** |
+
+SeMFAR improves ROI fidelity and lesion-boundary agreement relative to the fully supervised and EMA baselines. PFT is included as a historical comparison baseline; its exact original training implementation/checkpoint is not redistributed in this repository.
+
+The qualitative examples below show two held-out cases (`benign_6372` and `benign_5579`) from the 50-pair seed-123 experiment. Each triplet contains the low-fidelity input, model prediction, and high-fidelity reference. SeMFAR produces the most faithful local speckle and lesion-boundary appearance among the displayed methods.
+
+![Qualitative comparison of Fully Supervised, EMA, PFT, and SeMFAR](assets/benign_6372_5579_50pair_seed123_with_pft_LR_Prediction_HR.png)
+
+### Computational savings
+
+The low-fidelity simulation plus SeMFAR reconstruction workflow substantially reduces per-case runtime compared with the high-fidelity simulation workflow.
+
+| Workflow | Runtime | Reduction | Speedup |
+|---|---:|---:|---:|
+| High-fidelity simulation | 50.58--55.7 min | -- | 1$\times$ |
+| Low-fidelity simulation + SeMFAR | 11--13 min | 74.3--80.3% | 3.89--5.07$\times$ |
+
 ## Repository structure
 
 ```text
